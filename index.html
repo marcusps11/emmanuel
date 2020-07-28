@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<sergey-import src="head" />
+
+<body>
+    <div id="myDiv"></div>
+    <button id="myButton">Click Me</button>
+    <script>
+        var CONTENT_ID = "ef40b17b-dbf5-ed4d-452b-1fda0efdffca-live-91a7d705-aa02-fc99-a544-769231b15157"
+        var myButton = document.getElementById('myButton');
+
+
+
+        function nowPlay() {
+
+            window.setTimeout(function() {
+                var myPlayer = dacast(CONTENT_ID, 'myDiv', {
+                    width: '100%',
+                    height: '100%'
+                });
+
+
+                myPlayer.ready(function() {
+                    console.log('called')
+                    myPlayer.fullscreen(true)
+
+                });
+            }, 999)
+
+        }
+
+        myButton.addEventListener('click', nowPlay);
+    </script>
+    <script src="https://player.dacast.com/js/player.js?contentId=ef40b17b-dbf5-ed4d-452b-1fda0efdffca-live-91a7d705-aa02-fc99-a544-769231b15157" class="dacast-video"></script>
+
+</body>
+
+</html>
